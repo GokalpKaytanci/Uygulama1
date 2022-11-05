@@ -28,6 +28,8 @@ namespace WinFormsApp1
             int b = int.Parse(textBox4.Text);
             int c = int.Parse(textBox5.Text);
             int d = int.Parse(textBox2.Text);
+            int g = int.Parse(textBox1.Text);
+            int f = 0;
             int hacim = a * b * c / 1000;
             textBox8.Text = hacim.ToString();
             int hacimsonuc = hacim / 3;
@@ -40,7 +42,25 @@ namespace WinFormsApp1
                 textBox6.Text = d.ToString();
             }
 
-            
+            if ((g >= 1) && (g <= 200))
+            {
+                f = int.Parse(textBox6.Text) * 6;
+                textBox7.Text = f.ToString();
+            }
+            else if((g>=201) && (g<=600) ){
+                f = int.Parse(textBox6.Text) * 8;
+                textBox7.Text = f.ToString();
+            }
+            else if ((g>=601) && (g <= 1000))
+            {
+                f = int.Parse(textBox6.Text) * 10;
+                textBox7.Text = f.ToString();
+            }
+            else if (g > 1000)
+            {
+                f = int.Parse(textBox6.Text) * 12;
+                textBox7.Text = f.ToString();
+            }
         }
     }
 }
